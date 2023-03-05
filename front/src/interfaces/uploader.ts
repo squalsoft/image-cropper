@@ -1,3 +1,8 @@
 export interface Uploader {
-    uploadFile(file: File): void;
+    /**
+     * Метод для отправки изображения на обрезку по заданным координатам
+     * @param file
+     * @param region
+     */
+    uploadFileForCut(file: File, region: Region): Promise<void>;
 }

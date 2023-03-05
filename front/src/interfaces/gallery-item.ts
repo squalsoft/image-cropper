@@ -1,3 +1,5 @@
 export interface GalleryItem {
-    file: File,
+    imageId: number;
+    file: File;
+    region?: Region;
 }

@@ -1,14 +1,14 @@
 import {Express, Request, Response} from 'express';
 import * as multer from 'multer';
 import {IController} from './interfaces/controller';
-import {IRegionParser} from './interfaces/region-parser';
-import {IImage} from './interfaces/image';
+import {ImageService} from './services/image-service';
+import {RegionParser} from './parsers/region-parser';
 
 const upload = multer();
 
 export class ImageController implements IController {
-    constructor(public readonly imageService: IImage,
-                public readonly regionParser: IRegionParser) {
+    constructor(public readonly imageService: ImageService,
+                public readonly regionParser: RegionParser) {
     }
 
     setup(app: Express) {

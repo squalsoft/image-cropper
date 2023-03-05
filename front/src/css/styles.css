@@ -9,8 +9,12 @@
     border-radius: 20px;
     width: 480px;
     font-family: sans-serif;
-    margin: 100px auto;
     padding: 20px;
+    height: 200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #drop-area.highlight {
     border-color: purple;
@@ -20,6 +24,7 @@ p {
 }
 .my-form {
     margin-bottom: 10px;
+    text-align: center;
 }
 #gallery {
     margin-top: 10px;
@@ -31,13 +36,18 @@ p {
     flex-direction: column;
     gap: 5px;
     align-items: center;
+    padding: 5px;
+    border: dotted;
+    justify-content: flex-start;
 }
 
 #gallery img {
     width: 150px;
-    margin-bottom: 10px;
-    margin-right: 10px;
     vertical-align: middle;
+    cursor: pointer;
+}
+#gallery img.selected {
+    border: orange 3px solid;
 }
 .button {
     display: inline-block;
@@ -46,10 +56,53 @@ p {
     cursor: pointer;
     border-radius: 5px;
     border: 1px solid #ccc;
+    position: relative;
 }
 .button:hover {
     background: #ddd;
 }
+
+.button:active {
+    background: #ffcc2d;
+}
+
+.button__text {
+    font: bold 20px san-serif;
+    transition: all 0.2s;
+}
+
+.button--loading .button__text {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.button--loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+
 #file-elem {
     display: none;
 }
@@ -65,4 +118,10 @@ h1 {
 
 #canvas-wrapper {
     text-align: center;
+}
+
+.success-zone {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }

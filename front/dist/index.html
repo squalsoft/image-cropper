@@ -9,7 +9,7 @@
     <h1>Обрезка картинок</h1>
 
     <!-- Шапка вкладок -->
-    <div class="tab">
+    <div id="tabs" class="tab">
         <button class="tablinks" data-target="upload-files" id="default-open">Выбор файлов</button>
         <button class="tablinks" data-target="edit-file">Редактирование</button>
         <button class="tablinks" data-target="result">Результат</button>
@@ -35,7 +35,11 @@
 
     <div id="result" class="tabcontent">
         <h3>Обработка изображений</h3>
-        <p>Tokyo is the capital of Japan.</p>
+        <p class="success-zone">
+            <button id="process" class="button"><span class="button__text">Скачать</span></button>
+            <span id="success">Изображения успешно обработаны</span>
+            <button id="clear" class="button">Сброс</button>
+        </p>
     </div>
 
     <div id="gallery"></div>

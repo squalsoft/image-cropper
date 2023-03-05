@@ -1,10 +1,9 @@
 import * as sharp from 'sharp';
-import {IImage} from '../interfaces/image';
 
 /**
  * Сервис для работы с изображениями
  */
-export class ImageService implements IImage {
+export class ImageService{
     /**
      * Обрезка картинки по заданным параметрам
      * @param inputBuffer
